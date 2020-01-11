@@ -30,6 +30,10 @@ profile:
 
 app:
 	python3 setup.py kitty.app $(VVAL)
+	cp kitty-zen.plist kitty.app/Contents/Info.plist
+	rm -rf '/Applications/kitty zen.app'
+	cp -fR kitty.app '/Applications/kitty zen.app'
+	echo "Copied 'kitty.app' to '/Applications/kitty zen.app'"
 
 man:
 	$(MAKE) FAIL_WARN=$(FAIL_WARN) -C docs man
