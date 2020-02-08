@@ -30,6 +30,9 @@ profile:
 
 app:
 	python3 setup.py kitty.app $(VVAL)
+	rm -rf /Applications/kitty.app
+	cp -fR kitty.app /Applications/kitty.app
+	echo "Copied 'kitty.app' to '/Applications/kitty.app'"
 
 man:
 	$(MAKE) FAIL_WARN=$(FAIL_WARN) -C docs man
